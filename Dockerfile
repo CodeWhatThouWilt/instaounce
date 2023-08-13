@@ -7,7 +7,7 @@ FROM python:3.9
 # FLASK_ENV -> Tell flask to use the production server
 # SQLALCHEMY_ECHO -> Just set it to true
 
-ENV REACT_APP_BASE_URL=https://instaounce-clone.herokuapp.com/
+ENV REACT_APP_BASE_URL=https://instaounce-93c57c7b1c41.herokuapp.com/
 
 ENV FLASK_APP=app
 ENV FLASK_ENV=production
@@ -26,7 +26,7 @@ COPY /react-app/build/* app/static/
 # Run the next two python install commands with PIP
 # install -r requirements.txt
 # install psycopg2
-RUN pip install -r requirements.txt
+RUN pip install --requirements requirements.txt
 RUN pip install psycopg2
 
 # Start the flask environment by setting our

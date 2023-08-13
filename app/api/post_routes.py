@@ -142,6 +142,7 @@ def create_post():
         file.filename = f"Post{post_id}/{file.filename}"
 
         upload = upload_file_to_s3(file)
+
         if "url" not in upload:
             return upload, 400
 
